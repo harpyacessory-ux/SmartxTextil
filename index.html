@@ -556,6 +556,33 @@ main>section:not(.dark):not(.hero):has(+section:not(.dark))::after,main>section:
 @media (max-width:1080px){#segmentos .segs{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:900px){#mesa .table-wrap{grid-template-columns:1fr}}
 @media (max-width:520px){.mesa-lead svg{width:52px;height:52px}#segmentos .seg{font-size:.92rem}}
+/* ===== COMO FUNCIONA (4 etapas + túnel) — layout da referência ===== */
+#etapas .sec-head{max-width:none;display:grid;grid-template-columns:1.05fr 1fr;column-gap:clamp(24px,4vw,64px);align-items:center;margin-bottom:clamp(28px,3vw,44px)}
+#etapas .sec-head .eyebrow{grid-column:1;justify-self:start;font-size:.9rem;letter-spacing:.1em}
+#etapas .sec-head .eyebrow::before{width:34px}
+#etapas h2{grid-column:1;font-size:clamp(1.9rem,3.1vw,2.9rem);line-height:1.08;letter-spacing:-.03em;margin:0}
+#etapas h2 .y{display:block;color:var(--x)}
+#etapas .sec-head .lead{grid-column:2;grid-row:2;margin:0;max-width:44ch;color:#e4e4e4;font-size:clamp(1rem,1.25vw,1.2rem);line-height:1.5}
+#etapas .steps{gap:clamp(30px,2.8vw,44px)}
+#etapas .stp{padding:clamp(20px,1.8vw,28px);border-radius:20px;background:linear-gradient(160deg,#222326,#1a1b1d);border:1px solid rgba(255,255,255,.2)}
+#etapas .stp::before{font-size:clamp(2.2rem,2.8vw,2.8rem);margin-bottom:10px}
+#etapas .stp:not(:last-child)::after{content:"";position:absolute;top:50%;right:calc(-1 * clamp(30px,2.8vw,44px) / 2 - 9px);width:18px;height:18px;transform:translateY(-50%);background:var(--x);
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M4 12h15M13 6l6 6-6 6' fill='none' stroke='%23000' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat;
+          mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M4 12h15M13 6l6 6-6 6' fill='none' stroke='%23000' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat}
+#etapas .stp .si{position:absolute;top:clamp(16px,1.6vw,22px);right:clamp(16px,1.6vw,22px);width:clamp(48px,4vw,62px);height:clamp(48px,4vw,62px);display:grid;place-items:center;border-radius:14px;background:rgba(255,255,255,.07);color:var(--x)}
+#etapas .stp .si svg{width:58%;height:58%}
+#etapas .stp h3{font-size:clamp(1.15rem,1.5vw,1.45rem);margin-bottom:10px}
+#etapas .stp p{font-size:clamp(.92rem,1.05vw,1.05rem);line-height:1.5;color:#dcdcdc}
+#etapas .origin{grid-template-columns:1.1fr 1fr;margin-top:clamp(28px,3vw,40px);border-radius:24px;border-color:rgba(255,255,255,.2);background:linear-gradient(160deg,#202124,#18191b)}
+#etapas .origin img{max-height:none;aspect-ratio:16/10.5}
+#etapas .origin div{padding:clamp(24px,3.4vw,52px)}
+#etapas .origin .eyebrow{font-size:.9rem;letter-spacing:.1em}
+#etapas .origin .eyebrow::before{width:34px}
+#etapas .origin h3{font-size:clamp(1.5rem,2.15vw,2.2rem);line-height:1.1;letter-spacing:-.02em;margin-bottom:.5em}
+#etapas .origin p{font-size:clamp(1rem,1.2vw,1.15rem);line-height:1.55;color:#e0e0e0}
+@media (max-width:1080px){#etapas .stp:nth-child(2)::after{display:none}}
+@media (max-width:900px){#etapas .sec-head{grid-template-columns:1fr}#etapas .sec-head .lead{grid-column:1;grid-row:auto;margin-top:14px}#etapas .origin{grid-template-columns:1fr}}
+@media (max-width:760px){#etapas .stp::after{display:none}#etapas .steps{gap:14px}}
 </style>
 </head>
 <body>
@@ -584,6 +611,10 @@ main>section:not(.dark):not(.hero):has(+section:not(.dark))::after,main>section:
     <symbol id="i-shoe" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" d="M2.5 17.5v-5l4-5 3.2 3.2 3.3-1.2 4.5 3.3c2.4.6 4 1.6 4 3.4v1.3H2.5Z"/><path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" d="M2.5 15h19M8 10.5l1.2 1.2M10.3 9.8l1.2 1.2"/></symbol>
     <symbol id="i-bra" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" d="M3 4v5.5C3 14 5 17 7.5 17S12 14.5 12 11.5c0 3 2 5.5 4.5 5.5S21 14 21 9.5V4M3 9.5c2-1 5-1 9 2 4-3 7-3 9-2"/></symbol>
     <symbol id="i-rfid" viewBox="0 0 24 24"><rect x="1.5" y="7" width="13" height="10" rx="3" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="5.3" cy="12" r="1.2" fill="none" stroke="currentColor" stroke-width="1.4"/><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" d="M17 9a4.5 4.5 0 0 1 0 6M19.3 7a7.5 7.5 0 0 1 0 10M21.6 5a10.5 10.5 0 0 1 0 14"/></symbol>
+    <symbol id="i-barcode" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" d="M3 5v14M6 5v14M8.5 5v14M11.5 5v14M14 5v14M16.5 5v14M19 5v14M21 5v14"/></symbol>
+    <symbol id="i-tagrf" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" d="M13.5 2.5H20a1.5 1.5 0 0 1 1.5 1.5v6.5L11 21a1.5 1.5 0 0 1-2.1 0L3 15.1a1.5 1.5 0 0 1 0-2.1L13.5 2.5Z"/><circle cx="17.3" cy="6.7" r="1.4" fill="none" stroke="currentColor" stroke-width="1.5"/><path fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" d="M10 12.2a2.3 2.3 0 0 1 2 2M10.3 9.7a5 5 0 0 1 4.2 4.2"/><circle cx="9.6" cy="14.4" r=".9" fill="currentColor"/></symbol>
+    <symbol id="i-scanner" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" d="M2.5 6.5h12a2 2 0 0 1 2 2v1a2 2 0 0 1-2 2H11l-1.3 8.5H6.5L7.6 11.5H4.5a2 2 0 0 1-2-2v-3Z"/><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" d="M18.5 7.3a2.5 2.5 0 0 1 0 3.4M20.6 5.5a5.2 5.2 0 0 1 0 7M5.5 9h4"/></symbol>
+    <symbol id="i-monitor" viewBox="0 0 24 24"><rect x="2.5" y="3.5" width="19" height="13" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" d="M9 20.5h6M12 16.5v4"/><circle cx="12" cy="10" r="1.8" fill="none" stroke="currentColor" stroke-width="1.4"/><path fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" d="M12 6.4v1M12 12.6v1M8.4 10h1M14.6 10h1M9.5 7.5l.7.7M13.8 11.8l.7.7M9.5 12.5l.7-.7M13.8 8.2l.7-.7"/></symbol>
     <symbol id="i-tag" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M3 12.6V4a1 1 0 0 1 1-1h8.6a1 1 0 0 1 .7.3l7.4 7.4a1 1 0 0 1 0 1.4l-8.6 8.6a1 1 0 0 1-1.4 0l-7.4-7.4a1 1 0 0 1-.3-.7Z"/><circle cx="8" cy="8" r="1.6" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
     <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M3 10h18M8 3v4M16 3v4M7 14h2M11 14h2M15 14h2M7 17h2M11 17h2"/></symbol>
   </defs>
@@ -926,24 +957,24 @@ main>section:not(.dark):not(.hero):has(+section:not(.dark))::after,main>section:
 </section>
 
 <!-- ===== ETAPAS DO ATENDIMENTO ===== -->
-<section class="dark" aria-labelledby="h-etapas">
+<section class="dark" id="etapas" aria-labelledby="h-etapas">
   <div class="wrap">
     <div class="sec-head rv">
       <span class="eyebrow">Como funciona o projeto</span>
-      <h2 id="h-etapas">Automação RFID têxtil em quatro etapas</h2>
+      <h2 id="h-etapas">Automação RFID têxtil <span class="y">em quatro etapas</span></h2>
       <p class="lead">A Smartx desenha o projeto junto com o seu time, da definição do código à integração com o sistema.</p>
     </div>
     <div class="steps">
-      <div class="stp rv"><h3>Código</h3><p>Definimos um identificador único para cada peça rastreada.</p></div>
-      <div class="stp rv"><h3>Etiqueta</h3><p>Escolhemos a etiqueta certa para a peça, gravamos o código e aplicamos.</p></div>
-      <div class="stp rv"><h3>Equipamentos</h3><p>Indicamos impressoras e leitores conforme os pontos de leitura.</p></div>
-      <div class="stp rv"><h3>Sistemas</h3><p>Integramos as leituras ao ERP ou WMS para validar cada movimento.</p></div>
+      <div class="stp rv"><span class="si" aria-hidden="true"><svg><use href="#i-barcode"/></svg></span><h3>Código</h3><p>Definimos um identificador único para cada peça rastreada.</p></div>
+      <div class="stp rv"><span class="si" aria-hidden="true"><svg><use href="#i-tagrf"/></svg></span><h3>Etiqueta</h3><p>Escolhemos a etiqueta certa para a peça, gravamos o código e aplicamos.</p></div>
+      <div class="stp rv"><span class="si" aria-hidden="true"><svg><use href="#i-scanner"/></svg></span><h3>Equipamentos</h3><p>Indicamos impressoras e leitores conforme os pontos de leitura.</p></div>
+      <div class="stp rv"><span class="si" aria-hidden="true"><svg><use href="#i-monitor"/></svg></span><h3>Sistemas</h3><p>Integramos as leituras ao ERP ou WMS para validar cada movimento.</p></div>
     </div>
     <div class="origin rv">
       <img src="assets/tunel-rfid.webp" alt="Túnel RFID semiautomático da Smartx em um centro de distribuição" loading="lazy" width="1200" height="675">
       <div>
         <span class="eyebrow">Automação logística têxtil</span>
-        <h3 style="font-size:1.4rem">O túnel confere a caixa fechada antes de sair</h3>
+        <h3>O túnel confere a caixa fechada antes de sair</h3>
         <p>Com as peças etiquetadas, o túnel lê a caixa inteira sem abri-la e aprova ou reprova o pedido antes da expedição. O resultado vai direto para o sistema.</p>
       </div>
     </div>
