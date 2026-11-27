@@ -475,6 +475,33 @@ footer{position:relative;border-radius:var(--sec-r) var(--sec-r) 0 0;margin-top:
   #solucoes .tab{font-size:1rem;gap:8px}
   #solucoes .item div.t{padding:12px 14px 14px}
 }
+/* ===== SEÇÕES CLARAS EM SEQUÊNCIA: sem divisória entre elas =====
+   A curva só aparece na troca claro/escuro. Duas seções claras seguidas
+   formam um fundo contínuo. */
+main>section:not(.dark):not(.hero)+section:not(.dark){border-radius:0;margin-top:0;box-shadow:none}
+main>section:not(.dark):not(.hero):has(+section:not(.dark)){padding-bottom:clamp(64px,9vw,112px)}
+main>section.proof:has(+section:not(.dark)){padding-bottom:72px}
+main>section:not(.hero):not(.dark):not(.soft):not(.proof){background:radial-gradient(700px 420px at 92% 10%,rgba(246,178,27,.13),transparent 70%),radial-gradient(600px 380px at 4% 55%,rgba(246,178,27,.08),transparent 70%),linear-gradient(180deg,#fffdf8,#f7f5f0)}
+main>section.proof{background:radial-gradient(700px 360px at 50% 0%,rgba(246,178,27,.12),transparent 70%),linear-gradient(180deg,#fffdf8,#f7f5f0)}
+.soft{background:radial-gradient(760px 460px at 6% 60%,rgba(246,178,27,.12),transparent 70%),radial-gradient(640px 420px at 96% 88%,rgba(246,178,27,.10),transparent 70%),linear-gradient(180deg,#f7f5f0,#f1eee7)}
+/* arcos longe da emenda entre duas seções claras */
+main>section:not(.dark):not(.hero):has(+section:not(.dark))::after,main>section:not(.dark):not(.hero)+section:not(.dark)::after{width:min(540px,52vw);top:50%;bottom:auto;transform:translateY(-50%)}
+
+/* ===== MESA DE CONFERÊNCIA ===== */
+.cap{border-radius:22px;box-shadow:0 28px 56px -32px rgba(20,20,20,.38);border-color:#ebe7de}
+.cap th,.cap td{padding:18px 26px}
+.cap thead th{font-size:.9rem;padding:17px 26px}
+.cap td:first-child{font-weight:600;color:var(--ink);font-size:1.02rem}
+.cap td strong{font-size:1.45rem}
+.bar{height:8px;border-radius:999px;background:linear-gradient(90deg,#ffcb4d,#E59A00)}
+.cap tbody tr{transition:background .15s ease}
+.cap tbody tr:hover{background:#fffaf0}
+
+/* ===== SEGMENTOS ===== */
+.segs{gap:14px;max-width:980px;margin:0 auto}
+.seg{padding:14px 24px 14px 14px;gap:12px;border-color:#ebe7de;box-shadow:0 12px 26px -18px rgba(20,20,20,.35);font-size:1rem;transition:transform .15s ease,border-color .15s ease,box-shadow .15s ease}
+.seg svg{box-sizing:content-box;width:20px;height:20px;padding:8px;border-radius:50%;background:var(--x-soft)}
+.seg:hover{transform:translateY(-2px);border-color:rgba(246,178,27,.7);box-shadow:0 16px 30px -18px rgba(246,178,27,.55)}
 </style>
 </head>
 <body>
