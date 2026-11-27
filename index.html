@@ -502,6 +502,30 @@ main>section:not(.dark):not(.hero):has(+section:not(.dark))::after,main>section:
 .seg{padding:14px 24px 14px 14px;gap:12px;border-color:#ebe7de;box-shadow:0 12px 26px -18px rgba(20,20,20,.35);font-size:1rem;transition:transform .15s ease,border-color .15s ease,box-shadow .15s ease}
 .seg svg{box-sizing:content-box;width:20px;height:20px;padding:8px;border-radius:50%;background:var(--x-soft)}
 .seg:hover{transform:translateY(-2px);border-color:rgba(246,178,27,.7);box-shadow:0 16px 30px -18px rgba(246,178,27,.55)}
+/* ===== ONDE A OPERAÇÃO PERDE PEÇAS — layout da referência ===== */
+#aplicacoes .sec-head{max-width:900px}
+#aplicacoes .eyebrow{font-size:.9rem;letter-spacing:.08em}
+#aplicacoes .eyebrow::before{width:34px}
+#aplicacoes h2{font-size:clamp(1.9rem,3.3vw,3rem);line-height:1.06;letter-spacing:-.03em;margin-bottom:.35em}
+#aplicacoes h2 .o{color:#DE8A00}
+#aplicacoes .sec-head .lead{font-size:clamp(1.02rem,1.25vw,1.2rem);line-height:1.5;color:#3f4247;max-width:none}
+#aplicacoes .pains{gap:clamp(12px,1.2vw,18px);margin-bottom:clamp(32px,3.4vw,48px)}
+#aplicacoes .pain{display:flex;align-items:center;min-height:80px;padding:14px 16px 14px 54px;border-color:#ebe7de;box-shadow:0 14px 30px -22px rgba(20,20,20,.35);font-size:clamp(.88rem,.96vw,1rem);font-weight:600;line-height:1.35;color:var(--ink)}
+#aplicacoes .pain::before{left:18px;top:50%;width:24px;height:24px;transform:translateY(-50%);background:#e5484d}
+#aplicacoes .apps{grid-template-columns:1fr 1.3fr;gap:clamp(18px,1.8vw,26px)}
+#aplicacoes .apps-photo{border-radius:22px;min-height:440px}
+#aplicacoes .apps-photo figcaption{font-size:clamp(.9rem,1vw,1rem);padding:14px 18px;left:18px;right:18px;bottom:18px}
+#aplicacoes .apps-list{gap:clamp(14px,1.4vw,20px)}
+#aplicacoes .app{display:grid;grid-template-columns:auto 1fr;align-items:center;align-content:start;column-gap:18px;row-gap:0;padding:clamp(20px,1.9vw,28px);border-color:#ebe7de;box-shadow:0 14px 30px -22px rgba(20,20,20,.35)}
+#aplicacoes .app .ico{width:58px;height:58px;border-radius:16px;background:#ffeec4;margin:0 0 14px}
+#aplicacoes .app .ico svg{width:28px;height:28px}
+#aplicacoes .app .step{margin:0 0 14px;font:700 clamp(.9rem,1vw,1.02rem)/1 var(--f-text);letter-spacing:.02em;color:var(--x-deep)}
+#aplicacoes .app h3,#aplicacoes .app p{grid-column:1/-1}
+#aplicacoes .app h3{font-size:clamp(1.1rem,1.36vw,1.4rem);letter-spacing:-.02em;margin-bottom:8px}
+#aplicacoes .app p{font-size:clamp(.92rem,1.02vw,1.05rem);line-height:1.45;color:#4a4d52}
+@media (max-width:1080px){#aplicacoes .pains{grid-template-columns:1fr 1fr}}
+@media (max-width:900px){#aplicacoes .apps{grid-template-columns:1fr}#aplicacoes .apps-photo{min-height:300px}}
+@media (max-width:760px){#aplicacoes .pains,#aplicacoes .apps-list{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -638,7 +662,7 @@ main>section:not(.dark):not(.hero):has(+section:not(.dark))::after,main>section:
   <div class="wrap">
     <div class="sec-head rv">
       <span class="eyebrow">Onde a operação perde peças</span>
-      <h2 id="h-apps">Otimize sua operação têxtil em cada etapa do fluxo</h2>
+      <h2 id="h-apps">Otimize sua <span class="o">operação têxtil</span> em cada etapa do fluxo</h2>
       <p class="lead">Automatize inventários e conferências de roupas. Reduza erros e custos operacionais, com menos retrabalho entre produção, estoque e expedição.</p>
     </div>
     <div class="pains">
