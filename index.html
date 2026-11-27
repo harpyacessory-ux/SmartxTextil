@@ -201,18 +201,21 @@ section{padding:clamp(64px,9vw,112px) 0}
 }
 
 /* ===== CLIENTES E NÚMEROS ===== */
-.proof{padding:56px 0 64px;background:var(--paper);border-bottom:1px solid var(--line)}
-.proof-title{text-align:center;font:600 .82rem/1.4 var(--f-text);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:26px}
-.marquee{position:relative;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
-.marquee-track{display:flex;gap:18px;width:max-content;animation:marquee 60s linear infinite}
+.proof{padding:64px 0 72px;background:linear-gradient(180deg,#f6f6f4,#fff);border-bottom:1px solid var(--line)}
+.proof-title{display:flex;align-items:center;justify-content:center;gap:18px;font:700 .85rem/1.4 var(--f-text);letter-spacing:.14em;text-transform:uppercase;color:var(--ink);margin-bottom:30px}
+.proof-title::before,.proof-title::after{content:"";width:56px;height:2px;border-radius:2px;background:var(--x)}
+.marquee{position:relative;overflow:hidden;padding:10px 0;-webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
+.marquee+.marquee{margin-top:6px}
+.marquee-track{display:flex;gap:20px;width:max-content;animation:marquee 48s linear infinite}
+.marquee.rev .marquee-track{animation-direction:reverse;animation-duration:54s}
 .marquee:hover .marquee-track{animation-play-state:paused}
-.logo-card{flex:none;width:180px;height:92px;display:grid;place-items:center;padding:16px 22px;background:#fff;border:1px solid var(--line);border-radius:14px}
-.logo-card img{max-height:52px;max-width:100%;width:auto;object-fit:contain;filter:grayscale(1);opacity:.72;transition:filter .2s,opacity .2s}
-.logo-card:hover img{filter:none;opacity:1}
-@keyframes marquee{to{transform:translateX(calc(-50% - 9px))}}
-@media (prefers-reduced-motion:reduce){.marquee-track{animation:none;padding:0 20px}.marquee{overflow-x:auto;-webkit-mask-image:none;mask-image:none;scrollbar-width:thin}.marquee-track .dup{display:none}}
+.logo-card{flex:none;width:210px;height:104px;display:grid;place-items:center;padding:18px 28px;background:#fff;border:1px solid rgba(20,20,20,.06);border-radius:18px;box-shadow:0 1px 2px rgba(20,20,20,.04),0 10px 24px -14px rgba(20,20,20,.22);transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
+.logo-card img{max-height:54px;max-width:100%;width:auto;object-fit:contain;transition:transform .25s ease}
+.logo-card:hover{transform:translateY(-4px);border-color:rgba(246,178,27,.7);box-shadow:0 16px 30px -14px rgba(246,178,27,.45)}
+.logo-card:hover img{transform:scale(1.06)}
+@keyframes marquee{to{transform:translateX(calc(-50% - 10px))}}
 .numbers{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:44px}
-.num{text-align:center;padding:22px 12px;border-radius:var(--r);background:var(--paper-2)}
+.num{text-align:center;padding:22px 12px;border-radius:var(--r);background:#fff;border:1px solid var(--line)}
 .num strong{display:block;font:800 clamp(2rem,4.4vw,3rem)/1 var(--f-display);color:var(--ink);letter-spacing:-.03em}
 .num strong span{color:var(--x-deep)}
 .num small{display:block;margin-top:8px;font-size:.95rem;color:var(--muted);font-weight:500}
@@ -370,7 +373,11 @@ footer address{font-style:normal}
   .num small{margin:0}
   .apps-list,.pains,.steps,.data{grid-template-columns:1fr}
   .difs{grid-template-columns:1fr 1fr}
-  .logo-card{width:150px;height:80px}
+  .logo-card{width:156px;height:80px;padding:14px 18px;border-radius:14px}
+  .logo-card img{max-height:42px}
+  .marquee-track{gap:14px}
+  .proof-title{font-size:.74rem;letter-spacing:.1em;gap:10px}
+  .proof-title::before,.proof-title::after{width:18px}
   .form-card{padding:22px}
   .cap th,.cap td{padding:14px 14px}
 }
@@ -459,29 +466,33 @@ footer address{font-style:normal}
   <div class="wrap">
     <p class="proof-title">Empresas que confiam na Smartx</p>
   </div>
+  <!-- faixa 1: vestuário, calçado esportivo e uniformes (prioridade do briefing) -->
   <div class="marquee">
-    <div class="marquee-track" id="logos">
-      <!-- vestuário, calçado esportivo e uniformes primeiro (prioridade do briefing) -->
-      <div class="logo-card"><img src="assets/clientes/renner.webp" alt="Renner" loading="lazy" width="360" height="66"></div>
-      <div class="logo-card"><img src="assets/clientes/riachuelo.webp" alt="Riachuelo" loading="lazy" width="360" height="44"></div>
-      <div class="logo-card"><img src="assets/clientes/havan.webp" alt="Havan" loading="lazy" width="209" height="120"></div>
-      <div class="logo-card"><img src="assets/clientes/hm.webp" alt="H&amp;M" loading="lazy" width="182" height="120"></div>
-      <div class="logo-card"><img src="assets/clientes/nike.webp" alt="Nike" loading="lazy" width="230" height="120"></div>
-      <div class="logo-card"><img src="assets/clientes/new-balance.webp" alt="New Balance" loading="lazy" width="219" height="120"></div>
-      <div class="logo-card"><img src="assets/clientes/fila.webp" alt="Fila" loading="lazy" width="360" height="119"></div>
-      <div class="logo-card"><img src="assets/clientes/alsco.webp" alt="Alsco Uniformes" loading="lazy" width="334" height="120"></div>
-      <div class="logo-card"><img src="assets/clientes/id-logistics.webp" alt="ID Logistics" loading="lazy" width="180" height="120"></div>
-      <div class="logo-card"><img src="assets/clientes/o-boticario.webp" alt="O Boticário" loading="lazy" width="325" height="120"></div>
-      <div class="logo-card"><img src="assets/clientes/samsung.webp" alt="Samsung" loading="lazy" width="360" height="119"></div>
-      <div class="logo-card"><img src="assets/clientes/mercedes-benz.webp" alt="Mercedes-Benz" loading="lazy" width="360" height="92"></div>
-      <div class="logo-card"><img src="assets/clientes/nissan.webp" alt="Nissan" loading="lazy" width="141" height="120"></div>
-      <div class="logo-card"><img src="assets/clientes/globo.webp" alt="Globo" loading="lazy" width="143" height="120"></div>
-      <div class="logo-card"><img src="assets/clientes/embraer.webp" alt="Embraer" loading="lazy" width="360" height="61"></div>
-      <div class="logo-card"><img src="assets/clientes/latam.webp" alt="LATAM Airlines" loading="lazy" width="360" height="110"></div>
-      <div class="logo-card"><img src="assets/clientes/jbs.webp" alt="JBS" loading="lazy" width="303" height="120"></div>
-      <div class="logo-card"><img src="assets/clientes/electrolux.webp" alt="Electrolux" loading="lazy" width="360" height="56"></div>
-      <div class="logo-card"><img src="assets/clientes/continental.webp" alt="Continental" loading="lazy" width="360" height="66"></div>
-      <div class="logo-card"><img src="assets/clientes/swift.webp" alt="Swift" loading="lazy" width="360" height="85"></div>
+    <div class="marquee-track">
+      <div class="logo-card"><img src="assets/clientes/renner.webp" alt="Renner" width="360" height="66"></div>
+      <div class="logo-card"><img src="assets/clientes/riachuelo.webp" alt="Riachuelo" width="360" height="44"></div>
+      <div class="logo-card"><img src="assets/clientes/havan.webp" alt="Havan" width="209" height="120"></div>
+      <div class="logo-card"><img src="assets/clientes/hm.webp" alt="H&amp;M" width="182" height="120"></div>
+      <div class="logo-card"><img src="assets/clientes/nike.webp" alt="Nike" width="230" height="120"></div>
+      <div class="logo-card"><img src="assets/clientes/new-balance.webp" alt="New Balance" width="219" height="120"></div>
+      <div class="logo-card"><img src="assets/clientes/fila.webp" alt="Fila" width="360" height="119"></div>
+      <div class="logo-card"><img src="assets/clientes/alsco.webp" alt="Alsco Uniformes" width="334" height="120"></div>
+      <div class="logo-card"><img src="assets/clientes/id-logistics.webp" alt="ID Logistics" width="180" height="120"></div>
+      <div class="logo-card"><img src="assets/clientes/o-boticario.webp" alt="O Boticário" width="325" height="120"></div>
+    </div>
+  </div>
+  <div class="marquee rev">
+    <div class="marquee-track">
+      <div class="logo-card"><img src="assets/clientes/samsung.webp" alt="Samsung" width="360" height="119"></div>
+      <div class="logo-card"><img src="assets/clientes/mercedes-benz.webp" alt="Mercedes-Benz" width="360" height="92"></div>
+      <div class="logo-card"><img src="assets/clientes/nissan.webp" alt="Nissan" width="141" height="120"></div>
+      <div class="logo-card"><img src="assets/clientes/globo.webp" alt="Globo" width="143" height="120"></div>
+      <div class="logo-card"><img src="assets/clientes/embraer.webp" alt="Embraer" width="360" height="61"></div>
+      <div class="logo-card"><img src="assets/clientes/latam.webp" alt="LATAM Airlines" width="360" height="110"></div>
+      <div class="logo-card"><img src="assets/clientes/jbs.webp" alt="JBS" width="303" height="120"></div>
+      <div class="logo-card"><img src="assets/clientes/electrolux.webp" alt="Electrolux" width="360" height="56"></div>
+      <div class="logo-card"><img src="assets/clientes/continental.webp" alt="Continental" width="360" height="66"></div>
+      <div class="logo-card"><img src="assets/clientes/swift.webp" alt="Swift" width="360" height="85"></div>
     </div>
   </div>
   <div class="wrap">
@@ -834,8 +845,7 @@ footer address{font-style:normal}
   // header muda ao rolar
 
   // carrossel de logos: duplica a lista para o loop contínuo
-  var track=document.getElementById('logos');
-  if(track){Array.prototype.slice.call(track.children).forEach(function(n){var c=n.cloneNode(true);c.classList.add('dup');c.setAttribute('aria-hidden','true');c.querySelector('img').alt='';track.appendChild(c)})}
+  document.querySelectorAll('.marquee-track').forEach(function(track){Array.prototype.slice.call(track.children).forEach(function(n){var c=n.cloneNode(true);c.classList.add('dup');c.setAttribute('aria-hidden','true');c.querySelector('img').alt='';track.appendChild(c)})});
 
   // abas das linhas de produto
   var tabs=[].slice.call(document.querySelectorAll('[role="tab"]'));
