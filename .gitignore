@@ -1,0 +1,17 @@
+# Sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editores
+.vscode/
+.idea/
+
+# Vercel
+.vercel/
+.env*
+
+# Originais baixados do site (as versões otimizadas estão em assets/)
+/raw/
+
+node_modules/
