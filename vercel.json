@@ -3,7 +3,7 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "rewrites": [
-    { "source": "/rfid-industria-textil", "destination": "/index.html" }
+    { "source": "/rfid-industria-textil", "destination": "/" }
   ],
   "headers": [
     {
